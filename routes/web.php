@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\CarsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
+Route::resource('/cars', CarsController::class);
