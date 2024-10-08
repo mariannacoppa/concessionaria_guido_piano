@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cars;
 use App\Http\Requests\StoreCarsRequest;
 use App\Http\Requests\UpdateCarsRequest;
-
+use App\Http\Controllers\Controller;
 class CarsController extends Controller
 {
     /**
@@ -26,7 +26,7 @@ class CarsController extends Controller
      */
     public function create()
     {
-        //
+        return view('cars.create');
     }
 
     /**
@@ -48,7 +48,7 @@ class CarsController extends Controller
      */
     public function show(Cars $cars)
     {
-        //
+        return view('cars.show', compact('cars'));
     }
 
     /**
