@@ -20,3 +20,4 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::resource('/cars', CarsController::class);
+Route::delete('cars/{car}', [CarsController::class, 'destroy'])->name('cars.destroy');

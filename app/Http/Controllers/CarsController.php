@@ -82,9 +82,9 @@ class CarsController extends Controller
      * @param  \App\Models\Cars  $cars
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cars $cars)
+    public function destroy(Cars $car)
     {
-        $cars->delete();
+        $car->delete();
 
         return redirect()->route('cars.index');
     }

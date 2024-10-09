@@ -56,14 +56,23 @@
                                             <i class="fas fa-edit"></i>
                                         </a>
 
-                                        <form action="{{ route('cars.destroy', $car->id) }}" method="POST" 
+                                        <!-- <form action="{{ route('cars.destroy', $car->id) }}" method="POST" 
                                                  onsubmit="return confirm('Sei sicuro di voler eliminare questo elemento?');">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">
                                                 <i class="fas fa-trash"></i> 
                                             </button>
-                                        </form> 
+                                        </form>  -->
+
+                                        <form action="{{ route('cars.destroy', ['car' => $car->id]) }}"
+                                            method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"  class="btn btn-danger"><i
+                                                    class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </form>
                                                                          
 
                                     </div>
