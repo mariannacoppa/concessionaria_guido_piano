@@ -59,7 +59,7 @@ class CarsController extends Controller
      */
     public function edit(Cars $cars)
     {
-        //
+        return view('cars.edit', compact('car'));
     }
 
     /**
