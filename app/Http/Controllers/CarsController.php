@@ -57,7 +57,7 @@ class CarsController extends Controller
      * @param  \App\Models\Cars  $cars
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cars $cars)
+    public function edit(Cars $car)
     {
         return view('cars.edit', compact('car'));
     }
@@ -69,9 +69,11 @@ class CarsController extends Controller
      * @param  \App\Models\Cars  $cars
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCarsRequest $request, Cars $cars)
+    public function update(UpdateCarsRequest $request, Cars $car)
     {
-        //
+        $car->update($request->validated());
+
+        return redirect()->route('cars.index')->with('success', 'Car updated successfully.');
     }
 
     /**
