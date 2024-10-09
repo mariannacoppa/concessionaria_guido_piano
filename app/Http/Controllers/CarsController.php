@@ -57,7 +57,7 @@ class CarsController extends Controller
      * @param  \App\Models\Cars  $cars
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cars $cars)
+    public function edit(Cars $car)
     {
         return view('cars.edit', compact('car'));
     }
