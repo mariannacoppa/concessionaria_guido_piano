@@ -56,6 +56,16 @@
                                             <i class="fas fa-edit"></i>
                                         </a>
 
+                                        <form action="{{ route('cars.destroy', $car->id) }}" method="POST" 
+                                                 onsubmit="return confirm('Sei sicuro di voler eliminare questo elemento?');">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">
+                                                <i class="fas fa-trash"></i> 
+                                            </button>
+                                        </form> 
+                                                                         
+
                                     </div>
                                 </td>
                             </tr>
