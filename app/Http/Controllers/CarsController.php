@@ -71,7 +71,7 @@ class CarsController extends Controller
      */
     public function update(UpdateCarsRequest $request, Cars $car)
     {
-        $car->update($request->validated());
+         $car->update($request->validated());
 
         return redirect()->route('cars.index')->with('success', 'Car updated successfully.');
     }
