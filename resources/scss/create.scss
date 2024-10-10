@@ -1,5 +1,5 @@
-#create-cars {
-    .create-car-container {
+#create {
+    .create-container {
         max-width: 900px;
         margin: 20px auto;
         background: #ffffff;
@@ -9,7 +9,7 @@
         color: #333;
     }
 
-    .create-car-header {
+    .create-header {
         background-color: #ffc107;
         padding: 15px;
         color: #000;
@@ -17,7 +17,7 @@
         border-radius: 8px 8px 0 0;
     }
 
-    .create-car-body {
+    .create-body {
         background: #ffffff;
         padding: 20px;
         border-radius: 0 0 8px 8px;

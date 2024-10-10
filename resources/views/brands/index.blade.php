@@ -5,8 +5,8 @@
         <div class="row bg-giallo py-2 mb-2 rounded">
             <div class="col-12 d-flex justify-content-between align-items-center">
                 <h2 class="mb-0 text-dark">Lista Concessionarie</h2>
-                <a href="{{ route('cars.create') }}" class="btn btn-dark">
-                    <i class="fas fa-plus"></i> Aggiungi Nuova Auto
+                <a href="{{ route('brands.create') }}" class="btn btn-dark">
+                    <i class="fas fa-plus"></i> Aggiungi Nuovo Brand
                 </a>
             </div>
         </div>
@@ -17,32 +17,32 @@
                         <thead class="table-dark">
                             <tr>
                                 <th>ID</th>
-                                <th>Concessionarie</th>
+                                <th>Nome</th>
                                 <th>Telefono</th>
                                 <th>Indirizzo</th>
-                                <th>Colore</th>
-                                <tr>
+                                <th>Azioni</th>
+                            </tr>
                         </thead>
                         <tbody>
-                            @foreach ($resellers as $reseller)
+                            @foreach ($brands as $brand)
                                 <tr>
-                                    <td>{{ $reseller->id }}</td>
-                                    <td>{{ $reseller->company }}</td>
-                                    <td>{{ $reseller->phone }}</td>
-                                    <td>{{ $reseller->address }}</td>
-                                  
+                                    <td>{{ $brand->id }}</td>
+                                    <td>{{ $brand->company }}</td>
+                                    <td>{{ $brand->phone }}</td>
+                                    <td>{{ $brand->address }}</td>
                                     <td>
                                         <div class="d-flex gap-2">
-                                            <a href=" "
+                                            <a href="{{ route('brands.show', ['brand' => $brand->id]) }}"
                                                 class="btn btn-primary btn-sm">
                                                 <i class="fas fa-eye"></i>
                                             </a>
-                                            <a href=" "
+                                            <a href="{{ route('brands.edit', ['brand' => $brand->id]) }}"
                                                 class="btn btn-warning btn-sm">
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <form action=" " method="POST"
-                                                onsubmit="return confirm('Sei sicuro di voler eliminare questa auto?');">
+                                            <form action="{{ route('brands.destroy', ['brand' => $brand->id]) }}"
+                                                method="POST"
+                                                onsubmit="return confirm('Sei sicuro di voler eliminare questo brand?');">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm">

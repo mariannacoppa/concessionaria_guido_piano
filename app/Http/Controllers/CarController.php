@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cars;
-use App\Http\Requests\StoreCarsRequest;
-use App\Http\Requests\UpdateCarsRequest;
-use App\Http\Controllers\Controller;
-class CarsController extends Controller
+use App\Models\Car;
+use Illuminate\Http\Request;
+use App\Http\Requests\StoreCarRequest;
+use App\Http\Requests\UpdateCarRequest;
+
+class CarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +16,7 @@ class CarsController extends Controller
      */
     public function index()
     {
-        $cars = Cars::all();
+        $cars = Car::all();
         return view('cars.index', compact('cars'));
     }
 
@@ -32,21 +33,22 @@ class CarsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreCarsRequest  $request
+     * @param  \App\Http\Requests\StoreCarRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCarsRequest $request)
+    public function store(StoreCarRequest $request)
     {
-        //
+        Car::create($request->validated());
+        return redirect()->route('cars.index')->with('success', 'Car created successfully.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Cars  $cars
+     * @param  \App\Models\Car  $car
      * @return \Illuminate\Http\Response
      */
-    public function show(Cars $car)
+    public function show(Car $car)
     {
         return view('cars.show', compact('car'));
     }
@@ -54,10 +56,10 @@ class CarsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Cars  $cars
+     * @param  \App\Models\Car  $car
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cars $car)
+    public function edit(Car $car)
     {
         return view('cars.edit', compact('car'));
     }
@@ -65,28 +67,25 @@ class CarsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateCarsRequest  $request
-     * @param  \App\Models\Cars  $cars
+     * @param  \App\Http\Requests\UpdateCarRequest  $request
+     * @param  \App\Models\Car  $car
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCarsRequest $request, Cars $car)
+    public function update(UpdateCarRequest $request, Car $car)
     {
-         $car->update($request->validated());
-
+        $car->update($request->validated());
         return redirect()->route('cars.index')->with('success', 'Car updated successfully.');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Cars  $cars
+     * @param  \App\Models\Car  $car
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cars $car)
+    public function destroy(Car $car)
     {
         $car->delete();
-
-        return redirect()->route('cars.index');
+        return redirect()->route('cars.index')->with('success', 'Car deleted successfully.');
     }
-    
 }

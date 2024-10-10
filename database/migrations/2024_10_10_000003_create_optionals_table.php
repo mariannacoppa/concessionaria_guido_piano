@@ -15,11 +15,12 @@ return new class extends Migration
     {
         Schema::create('optionals', function (Blueprint $table) {
             $table->id();
-            $table->decimal('price', 10,2);
-            $table->string('name', 25);
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->decimal('price', 10, 2);
             $table->timestamps();
         });
-    }
+    }    
 
     /**
      * Reverse the migrations.

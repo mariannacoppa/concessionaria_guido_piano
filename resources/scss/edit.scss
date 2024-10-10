@@ -1,5 +1,5 @@
-#show-cars {
-    .show-car-container {
+#edit {
+    .edit-container {
         max-width: 900px;
         margin: 20px auto;
         background: #ffffff;
@@ -9,20 +9,17 @@
         color: #333;
     }
 
-    .show-car-header {
+    .edit-header {
         background-color: #ffc107;
         padding: 15px;
         color: #000;
         text-align: center;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
     }
 
-    .show-car-body {
+    .edit-body {
         background: #ffffff;
         padding: 20px;
         border-radius: 0 0 8px 8px;
-        margin-top: 15px;
     }
 
     .form-row {
@@ -38,21 +35,36 @@
         flex-direction: column;
     }
 
-    .form-group p {
+    .form-control {
         background: #f9f9f9;
         border: 1px solid #ccc;
         color: #333;
         border-radius: 4px;
+        transition: border-color 0.3s ease;
         padding: 10px;
-        margin-bottom: 10px;
+    }
+
+    .form-control:focus {
+        border-color: #ffc107;
+        background: #fff;
+        outline: none;
+    }
+
+    .is-invalid {
+        border-color: #e74c3c;
+        background: #fddede;
+    }
+
+    .invalid-feedback {
+        color: #e74c3c;
+        font-size: 0.875rem;
+        margin-top: 5px;
     }
 
     .form-actions {
         display: flex;
         justify-content: flex-end;
         gap: 10px;
-        margin-right: 10px;
-        margin-left: 10px;
     }
 
     .btn-warning {
