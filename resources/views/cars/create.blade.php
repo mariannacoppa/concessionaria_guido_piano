@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="create-cars" class="create-car-container">
-        <div class="create-car-header">
+    <div id="create" class="create-container">
+        <div class="create-header">
             <h1 class="text-uppercase">Aggiungi una nuova auto</h1>
         </div>
-        <div class="create-car-body">
+        <div class="create-body">
             <form action="{{ route('cars.store') }}" method="POST">
                 @csrf
 

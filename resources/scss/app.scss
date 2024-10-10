@@ -3,10 +3,10 @@
 
 @import 'header';
 @import 'footer';
-@import 'edit_cars';
-@import 'index_cars';
-@import 'show_cars';
-@import 'create_cars';
+@import 'edit';
+@import 'index';
+@import 'show';
+@import 'create';
 
 main {
     height: calc(100vh - 100px);

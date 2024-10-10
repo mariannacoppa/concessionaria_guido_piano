@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="show-cars" class="show-car-container">
-        <div class="show-car-header">
+    <div id="show" class="show-container">
+        <div class="show-header">
             <h1 class="text-uppercase">Dettagli Auto: {{ $car->brand }} {{ $car->model }}</h1>
         </div>
-        <div class="show-car-body mt-3">
+        <div class="show-body mt-3">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <p><strong>Marca:</strong> {{ $car->brand }}</p>
