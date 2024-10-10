@@ -1,5 +1,5 @@
-#show-cars {
-    .show-car-container {
+#show {
+    .show-container {
         max-width: 900px;
         margin: 20px auto;
         background: #ffffff;
@@ -9,7 +9,7 @@
         color: #333;
     }
 
-    .show-car-header {
+    .show-header {
         background-color: #ffc107;
         padding: 15px;
         color: #000;
@@ -18,7 +18,7 @@
         border-top-right-radius: 8px;
     }
 
-    .show-car-body {
+    .show-body {
         background: #ffffff;
         padding: 20px;
         border-radius: 0 0 8px 8px;

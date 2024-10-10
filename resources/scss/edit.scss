@@ -1,5 +1,5 @@
-#edit-cars {
-    .edit-car-container {
+#edit {
+    .edit-container {
         max-width: 900px;
         margin: 20px auto;
         background: #ffffff;
@@ -9,14 +9,14 @@
         color: #333;
     }
 
-    .edit-car-header {
+    .edit-header {
         background-color: #ffc107;
         padding: 15px;
         color: #000;
         text-align: center;
     }
 
-    .edit-car-body {
+    .edit-body {
         background: #ffffff;
         padding: 20px;
         border-radius: 0 0 8px 8px;

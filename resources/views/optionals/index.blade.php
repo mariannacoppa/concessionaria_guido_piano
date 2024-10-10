@@ -4,9 +4,9 @@
     <div class="container-fluid">
         <div class="row bg-giallo py-2 mb-2 rounded">
             <div class="col-12 d-flex justify-content-between align-items-center">
-                <h2 class="mb-0 text-dark">Lista Automobili</h2>
-                <a href="{{ route('cars.create') }}" class="btn btn-dark">
-                    <i class="fas fa-plus"></i> Aggiungi Nuova Auto
+                <h2 class="mb-0 text-dark">Lista Optional</h2>
+                <a href="{{ route('optionals.create') }}" class="btn btn-dark">
+                    <i class="fas fa-plus"></i> Aggiungi Nuovo Optional
                 </a>
             </div>
         </div>
@@ -17,43 +17,32 @@
                         <thead class="table-dark">
                             <tr>
                                 <th>ID</th>
-                                <th>Marca</th>
-                                <th>Modello</th>
-                                <th>Anno</th>
-                                <th>Colore</th>
-                                <th>Motore</th>
-                                <th>Cavalli</th>
-                                <th>Porte</th>
-                                <th>KM</th>
-                                <th>Usato</th>
+                                <th>Nome</th>
+                                <th>Descrizione</th>
+                                <th>Prezzo</th>
                                 <th>Azioni</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($cars as $car)
+                            @foreach ($optionals as $optional)
                                 <tr>
-                                    <td>{{ $car->id }}</td>
-                                    <td>{{ $car->brand }}</td>
-                                    <td>{{ $car->model }}</td>
-                                    <td>{{ $car->year }}</td>
-                                    <td>{{ $car->color }}</td>
-                                    <td>{{ $car->engine }}</td>
-                                    <td>{{ $car->horsepower }}</td>
-                                    <td>{{ $car->doors }}</td>
-                                    <td>{{ number_format($car->km, 0, ',', '.') }} km</td>
-                                    <td>{{ $car->used ? 'Sì' : 'No' }}</td>
+                                    <td>{{ $optional->id }}</td>
+                                    <td>{{ $optional->name }}</td>
+                                    <td>{{ $optional->description }}</td>
+                                    <td>{{ number_format($optional->price, 2, ',', '.') }} €</td>
                                     <td>
                                         <div class="d-flex gap-2">
-                                            <a href="{{ route('cars.show', ['car' => $car->id]) }}"
+                                            <a href="{{ route('optionals.show', ['optional' => $optional->id]) }}"
                                                 class="btn btn-primary btn-sm">
                                                 <i class="fas fa-eye"></i>
                                             </a>
-                                            <a href="{{ route('cars.edit', ['car' => $car->id]) }}"
+                                            <a href="{{ route('optionals.edit', ['optional' => $optional->id]) }}"
                                                 class="btn btn-warning btn-sm">
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <form action="{{ route('cars.destroy', ['car' => $car->id]) }}" method="POST"
-                                                onsubmit="return confirm('Sei sicuro di voler eliminare questa auto?');">
+                                            <form action="{{ route('optionals.destroy', ['optional' => $optional->id]) }}"
+                                                method="POST"
+                                                onsubmit="return confirm('Sei sicuro di voler eliminare questo optional?');">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm">

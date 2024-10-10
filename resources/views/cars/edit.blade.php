@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="edit-cars" class="edit-car-container">
-        <div class="edit-car-header">
+    <div id="edit" class="edit-container">
+        <div class="edit-header">
             <h1 class="text-uppercase">Modifica Auto: {{ $car->brand }} {{ $car->model }}</h1>
         </div>
-        <div class="edit-car-body">
+        <div class="edit-body">
             <form action="{{ route('cars.update', $car->id) }}" method="POST">
                 @csrf
                 @method('PUT')
