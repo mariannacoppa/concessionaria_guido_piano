@@ -12,7 +12,8 @@ return [
         'doors' => 2,
         'km' => 10000,
         'used' => false,
-        'thumb' => 'https://example.com/ferrari-488-gtb-thumb.jpg',
+
+       
     ],
     [
         'brand' => 'Lamborghini',
@@ -77,8 +78,10 @@ return [
         'doors' => 5,
         'km' => 15000,
         'used' => true,
-        'thumb' => 'https://images.ctfassets.net/uaddx06iwzdz/3eBWZGkG0CvyPuNcjShsJl/4b2d75d099ec4ffd1c2cea66eb98514f/fiat-500-xs.jpg',
+
+       
     ],
+
     [
         'brand' => 'Mercedes-Benz',
         'model' => 'AMG GT S',
@@ -234,5 +237,5 @@ return [
         'km' => 3000,
         'used' => false,
         'thumb' => 'https://images.ctfassets.net/uaddx06iwzdz/3eBWZGkG0CvyPuNcjShsJl/4b2d75d099ec4ffd1c2cea66eb98514f/fiat-500-xs.jpg',
-    ],
+    ]
 ];
