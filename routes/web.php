@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CarsController;
 
+use App\Http\Controllers\ResellersController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,3 +23,5 @@ Route::get('/', function () {
 
 Route::resource('/cars', CarsController::class);
 Route::delete('cars/{car}', [CarsController::class, 'destroy'])->name('cars.destroy');
+
+Route::resource('/resellers', ResellersController::class);

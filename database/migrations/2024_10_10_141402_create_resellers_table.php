@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('car_makers', function (Blueprint $table) {
-            $table->id();
+        Schema::create('resellers', function (Blueprint $table) {
+             $table->id();
             $table->string('company', 30);
             $table->string('phone', 12);
             $table->string('address', 30);
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('car_makers');
+        Schema::dropIfExists('resellers');
     }
 };
