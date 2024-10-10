@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Resellers;
+use App\Models\Optional;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreOptionalRequest;
+use App\Http\Requests\UpdateOptionalRequest;
 
-class ResellersController extends Controller
+class OptionalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,7 @@ class ResellersController extends Controller
      */
     public function index()
     {
-         $resellers = Resellers::all();
-        return view('resellers.index', compact('resellers'));
+        //
     }
 
     /**
@@ -42,10 +43,10 @@ class ResellersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Resellers  $resellers
+     * @param  \App\Models\Optional  $optional
      * @return \Illuminate\Http\Response
      */
-    public function show(Resellers $resellers)
+    public function show(Optional $optional)
     {
         //
     }
@@ -53,10 +54,10 @@ class ResellersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Resellers  $resellers
+     * @param  \App\Models\Optional  $optional
      * @return \Illuminate\Http\Response
      */
-    public function edit(Resellers $resellers)
+    public function edit(Optional $optional)
     {
         //
     }
@@ -65,10 +66,10 @@ class ResellersController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Resellers  $resellers
+     * @param  \App\Models\Optional  $optional
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Resellers $resellers)
+    public function update(Request $request, Optional $optional)
     {
         //
     }
@@ -76,10 +77,10 @@ class ResellersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Resellers  $resellers
+     * @param  \App\Models\Optional  $optional
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Resellers $resellers)
+    public function destroy(Optional $optional)
     {
         //
     }

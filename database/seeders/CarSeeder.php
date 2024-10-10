@@ -2,12 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Car;
 
-use App\Models\Cars;
-
-class CarsSeeder extends Seeder
+class CarSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -19,7 +17,7 @@ class CarsSeeder extends Seeder
         $cars = config("cars");
 
         foreach ($cars as $car) {
-            $new_car = new Cars();
+            $new_car = new Car();
 
             $new_car->brand = $car['brand'];
             $new_car->model = $car['model'];
