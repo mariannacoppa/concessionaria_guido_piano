@@ -12,6 +12,7 @@ return [
         'doors' => 2,
         'km' => 10000,
         'used' => false,
+        'thumb' => 'https://example.com/ferrari-488-gtb-thumb.jpg',
     ],
     [
         'brand' => 'Lamborghini',
@@ -24,6 +25,7 @@ return [
         'doors' => 2,
         'km' => 5000,
         'used' => false,
+        'thumb' => 'https://images.ctfassets.net/uaddx06iwzdz/3eBWZGkG0CvyPuNcjShsJl/4b2d75d099ec4ffd1c2cea66eb98514f/fiat-500-xs.jpg',
     ],
     [
         'brand' => 'Porsche',
@@ -36,6 +38,7 @@ return [
         'doors' => 2,
         'km' => 2000,
         'used' => false,
+        'thumb' => 'https://images.ctfassets.net/uaddx06iwzdz/3eBWZGkG0CvyPuNcjShsJl/4b2d75d099ec4ffd1c2cea66eb98514f/fiat-500-xs.jpg',
     ],
     [
         'brand' => 'Tesla',
@@ -48,6 +51,7 @@ return [
         'doors' => 4,
         'km' => 1000,
         'used' => false,
+        'thumb' => 'https://images.ctfassets.net/uaddx06iwzdz/3eBWZGkG0CvyPuNcjShsJl/4b2d75d099ec4ffd1c2cea66eb98514f/fiat-500-xs.jpg',
     ],
     [
         'brand' => 'BMW',
@@ -60,6 +64,7 @@ return [
         'doors' => 4,
         'km' => 8000,
         'used' => false,
+        'thumb' => 'https://images.ctfassets.net/uaddx06iwzdz/3eBWZGkG0CvyPuNcjShsJl/4b2d75d099ec4ffd1c2cea66eb98514f/fiat-500-xs.jpg',
     ],
     [
         'brand' => 'Audi',
@@ -72,7 +77,7 @@ return [
         'doors' => 5,
         'km' => 15000,
         'used' => true,
-         "thumb" => "https://imgs.search.brave.com/aUNyvZBXUulb963JH7KnQm9AMr8bcBoLsiHREOqayIU/rs:fit:612:612:1/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9hc3IvOWZm/ZWYzMDMtMGZhYy00/OGRkLTg3ODctYzUy/NTk0MDk2ODAwXzEu/MTc1ZDk1Mjg2NzY0/OGEwOTczMTY2NGMy/MTE1NjNlYWIuanBl/Zz9vZG5XaWR0aD02/MTImb2RuSGVpZ2h0/PTYxMiZvZG5CZz1m/ZmZmZmY",
+        'thumb' => 'https://images.ctfassets.net/uaddx06iwzdz/3eBWZGkG0CvyPuNcjShsJl/4b2d75d099ec4ffd1c2cea66eb98514f/fiat-500-xs.jpg',
     ],
     [
         'brand' => 'Mercedes-Benz',
@@ -85,6 +90,7 @@ return [
         'doors' => 2,
         'km' => 12000,
         'used' => true,
+        'thumb' => 'https://images.ctfassets.net/uaddx06iwzdz/3eBWZGkG0CvyPuNcjShsJl/4b2d75d099ec4ffd1c2cea66eb98514f/fiat-500-xs.jpg',
     ],
     [
         'brand' => 'Jaguar',
@@ -97,6 +103,7 @@ return [
         'doors' => 2,
         'km' => 6000,
         'used' => false,
+        'thumb' => 'https://images.ctfassets.net/uaddx06iwzdz/3eBWZGkG0CvyPuNcjShsJl/4b2d75d099ec4ffd1c2cea66eb98514f/fiat-500-xs.jpg',
     ],
     [
         'brand' => 'Aston Martin',
@@ -109,6 +116,7 @@ return [
         'doors' => 2,
         'km' => 3000,
         'used' => false,
+        'thumb' => 'https://images.ctfassets.net/uaddx06iwzdz/3eBWZGkG0CvyPuNcjShsJl/4b2d75d099ec4ffd1c2cea66eb98514f/fiat-500-xs.jpg',
     ],
     [
         'brand' => 'Maserati',
@@ -121,6 +129,7 @@ return [
         'doors' => 4,
         'km' => 20000,
         'used' => true,
+        'thumb' => 'https://images.ctfassets.net/uaddx06iwzdz/3eBWZGkG0CvyPuNcjShsJl/4b2d75d099ec4ffd1c2cea66eb98514f/fiat-500-xs.jpg',
     ],
     [
         'brand' => 'Bentley',
@@ -133,6 +142,7 @@ return [
         'doors' => 2,
         'km' => 5000,
         'used' => false,
+        'thumb' => 'https://images.ctfassets.net/uaddx06iwzdz/3eBWZGkG0CvyPuNcjShsJl/4b2d75d099ec4ffd1c2cea66eb98514f/fiat-500-xs.jpg',
     ],
     [
         'brand' => 'McLaren',
@@ -145,6 +155,7 @@ return [
         'doors' => 2,
         'km' => 2000,
         'used' => false,
+        'thumb' => 'https://images.ctfassets.net/uaddx06iwzdz/3eBWZGkG0CvyPuNcjShsJl/4b2d75d099ec4ffd1c2cea66eb98514f/fiat-500-xs.jpg',
     ],
     [
         'brand' => 'Ford',
@@ -157,6 +168,7 @@ return [
         'doors' => 2,
         'km' => 10000,
         'used' => true,
+        'thumb' => 'https://images.ctfassets.net/uaddx06iwzdz/3eBWZGkG0CvyPuNcjShsJl/4b2d75d099ec4ffd1c2cea66eb98514f/fiat-500-xs.jpg',
     ],
     [
         'brand' => 'Chevrolet',
@@ -169,6 +181,7 @@ return [
         'doors' => 2,
         'km' => 8000,
         'used' => true,
+        'thumb' => 'https://images.ctfassets.net/uaddx06iwzdz/3eBWZGkG0CvyPuNcjShsJl/4b2d75d099ec4ffd1c2cea66eb98514f/fiat-500-xs.jpg',
     ],
     [
         'brand' => 'Rolls-Royce',
@@ -181,6 +194,7 @@ return [
         'doors' => 4,
         'km' => 1000,
         'used' => false,
+        'thumb' => 'https://images.ctfassets.net/uaddx06iwzdz/3eBWZGkG0CvyPuNcjShsJl/4b2d75d099ec4ffd1c2cea66eb98514f/fiat-500-xs.jpg',
     ],
     [
         'brand' => 'Bugatti',
@@ -193,6 +207,7 @@ return [
         'doors' => 2,
         'km' => 500,
         'used' => false,
+        'thumb' => 'https://images.ctfassets.net/uaddx06iwzdz/3eBWZGkG0CvyPuNcjShsJl/4b2d75d099ec4ffd1c2cea66eb98514f/fiat-500-xs.jpg',
     ],
     [
         'brand' => 'Ferrari',
@@ -205,6 +220,7 @@ return [
         'doors' => 2,
         'km' => 1000,
         'used' => false,
+        'thumb' => 'https://images.ctfassets.net/uaddx06iwzdz/3eBWZGkG0CvyPuNcjShsJl/4b2d75d099ec4ffd1c2cea66eb98514f/fiat-500-xs.jpg',
     ],
     [
         'brand' => 'Lamborghini',
@@ -217,5 +233,6 @@ return [
         'doors' => 2,
         'km' => 3000,
         'used' => false,
+        'thumb' => 'https://images.ctfassets.net/uaddx06iwzdz/3eBWZGkG0CvyPuNcjShsJl/4b2d75d099ec4ffd1c2cea66eb98514f/fiat-500-xs.jpg',
     ],
 ];
