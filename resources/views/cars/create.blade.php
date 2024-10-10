@@ -1,78 +1,122 @@
 @extends('layouts.app')
+
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2>Aggiungi una nuova auto</h2>
-            </div>
-            <div class="col-12">
-                <form action="{{ route('cars.store') }}" method="post">
-                    @csrf
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="" class="control-label">Car name</label>
-                            <input type="text" name="name" id="" class="form-control form-control-sm"
-                                placeholder="Car name">
-                        </div>
-                        <div class="col-6">
-                            <label for="" class="control-label">Brand</label>
-                            <input type="text" name="brand" id="" class="form-control form-control-sm"
-                                placeholder="Brand">
-                        </div>
-                        <div class="col-6">
-                            <label for="" class="control-label">Model</label>
-                            <input type="text" name="model" id="" class="form-control form-control-sm"
-                                placeholder="Model">
-                        </div>
-                        <div class="col-6">
-                            <label for="" class="control-label">Release year</label>
-                            <input type="date" name="year" id="" class="form-control form-control-sm"
-                                placeholder="Release year">
-                        </div>
-                        <div class="col-6">
-                            <label for="" class="control-label">Color</label>
-                            <input type="text" name="color" id="" class="form-control form-control-sm"
-                                placeholder="Color">
-                        </div>
-                        <div class="col-6">
-                            <label for="" class="control-label">Engine</label>
-                            <input type="text" name="engine" id="" class="form-control form-control-sm"
-                                placeholder="Engine">
-                        </div>
-                        <div class="col-6">
-                            <label for="" class="control-label">Horsepower</label>
-                            <input type="number" name="horsepower" id="" class="form-control form-control-sm"
-                                placeholder="Horsepower">
-                        </div>
-                        <div class="col-6">
-                            <label for="" class="control-label">Doors number</label>
-                            <input type="number" name="doors" id="" class="form-control form-control-sm"
-                                placeholder="Doors number">
-                        </div>
-                        <div class="col-6">
-                            <label for="" class="control-label">Km</label>
-                            <input type="number" name="km" id="" class="form-control form-control-sm"
-                                placeholder="Km">
-                        </div>
-                        <div class="col-6">
-                            <label for="" class="control-label">Used</label>
-                            <input type="text" name="brand" id="" class="form-control form-control-sm"
-                                placeholder="Brand">
-                        </div>
-                        <div class="col-6">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="used" id="">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                    Usata
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-sm btn-success">Salva</button>
-                        </div>
+    <div id="create-cars" class="create-car-container">
+        <div class="create-car-header">
+            <h1 class="text-uppercase">Aggiungi una nuova auto</h1>
+        </div>
+        <div class="create-car-body">
+            <form action="{{ route('cars.store') }}" method="POST">
+                @csrf
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="brand">Marca:</label>
+                        <input type="text" id="brand" name="brand" value="{{ old('brand') }}"
+                            class="form-control @error('brand') is-invalid @enderror" required>
+                        @error('brand')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
                     </div>
-                </form>
-            </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="model">Modello:</label>
+                        <input type="text" id="model" name="model" value="{{ old('model') }}"
+                            class="form-control @error('model') is-invalid @enderror" required>
+                        @error('model')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="year">Anno:</label>
+                        <input type="number" id="year" name="year" value="{{ old('year') }}"
+                            class="form-control @error('year') is-invalid @enderror" required>
+                        @error('year')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="color">Colore:</label>
+                        <input type="text" id="color" name="color" value="{{ old('color') }}"
+                            class="form-control @error('color') is-invalid @enderror" required>
+                        @error('color')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="price">Prezzo (€):</label>
+                        <input type="number" id="price" name="price" value="{{ old('price') }}"
+                            class="form-control @error('price') is-invalid @enderror" required>
+                        @error('price')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="engine">Motore:</label>
+                        <input type="text" id="engine" name="engine" value="{{ old('engine') }}"
+                            class="form-control @error('engine') is-invalid @enderror" required>
+                        @error('engine')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="horsepower">Cavalli (HP):</label>
+                        <input type="number" id="horsepower" name="horsepower" value="{{ old('horsepower') }}"
+                            class="form-control @error('horsepower') is-invalid @enderror" required>
+                        @error('horsepower')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="doors">Porte:</label>
+                        <input type="number" id="doors" name="doors" value="{{ old('doors') }}"
+                            class="form-control @error('doors') is-invalid @enderror" required>
+                        @error('doors')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="km">Chilometri:</label>
+                        <input type="number" id="km" name="km" value="{{ old('km') }}"
+                            class="form-control @error('km') is-invalid @enderror" required>
+                        @error('km')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="used">Usato:</label>
+                        <select id="used" name="used" class="form-control @error('used') is-invalid @enderror"
+                            required>
+                            <option value="1" {{ old('used') == 1 ? 'selected' : '' }}>Sì</option>
+                            <option value="0" {{ old('used') == 0 ? 'selected' : '' }}>No</option>
+                        </select>
+                        @error('used')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="form-actions mt-4 text-right">
+                    <button type="submit" class="btn btn-success text-dark">Aggiungi Auto</button>
+                    <a href="{{ route('cars.index') }}" class="btn btn-secondary">Annulla</a>
+                </div>
+            </form>
         </div>
     </div>
 @endsection
