@@ -16,7 +16,10 @@
                     <a class="nav-link" href="{{ route('cars.index') }}">Auto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('brands.index') }}">Concessionarie</a>
+                    <a class="nav-link" href="{{ route('brands.index') }}">Case Automobilistiche</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('optionals.index') }}">Optional</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"

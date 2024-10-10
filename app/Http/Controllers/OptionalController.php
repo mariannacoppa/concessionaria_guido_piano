@@ -16,7 +16,8 @@ class OptionalController extends Controller
      */
     public function index()
     {
-        //
+        $optionals = Optional::all();
+        return view('optionals.index', compact('optionals'));
     }
 
     /**
@@ -26,18 +27,19 @@ class OptionalController extends Controller
      */
     public function create()
     {
-        //
+        return view('optionals.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreOptionalRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreOptionalRequest $request)
     {
-        //
+        Optional::create($request->validated());
+        return redirect()->route('optionals.index')->with('success', 'Optional created successfully.');
     }
 
     /**
@@ -48,7 +50,7 @@ class OptionalController extends Controller
      */
     public function show(Optional $optional)
     {
-        //
+        return view('optionals.show', compact('optional'));
     }
 
     /**
@@ -59,19 +61,20 @@ class OptionalController extends Controller
      */
     public function edit(Optional $optional)
     {
-        //
+        return view('optionals.edit', compact('optional'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\UpdateOptionalRequest  $request
      * @param  \App\Models\Optional  $optional
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Optional $optional)
+    public function update(UpdateOptionalRequest $request, Optional $optional)
     {
-        //
+        $optional->update($request->validated());
+        return redirect()->route('optionals.index')->with('success', 'Optional updated successfully.');
     }
 
     /**
@@ -82,6 +85,7 @@ class OptionalController extends Controller
      */
     public function destroy(Optional $optional)
     {
-        //
+        $optional->delete();
+        return redirect()->route('optionals.index')->with('success', 'Optional deleted successfully.');
     }
 }

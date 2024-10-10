@@ -27,18 +27,19 @@ class BrandController extends Controller
      */
     public function create()
     {
-        //
+        return view('brands.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreBrandRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreBrandRequest $request)
     {
-        //
+        Brand::create($request->validated());
+        return redirect()->route('brands.index')->with('success', 'Brand created successfully.');
     }
 
     /**
@@ -49,7 +50,7 @@ class BrandController extends Controller
      */
     public function show(Brand $brand)
     {
-        //
+        return view('brands.show', compact('brand'));
     }
 
     /**
@@ -60,19 +61,20 @@ class BrandController extends Controller
      */
     public function edit(Brand $brand)
     {
-        //
+        return view('brands.edit', compact('brand'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\UpdateBrandRequest  $request
      * @param  \App\Models\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Brand $brand)
+    public function update(UpdateBrandRequest $request, Brand $brand)
     {
-        //
+        $brand->update($request->validated());
+        return redirect()->route('brands.index')->with('success', 'Brand updated successfully.');
     }
 
     /**
@@ -83,6 +85,7 @@ class BrandController extends Controller
      */
     public function destroy(Brand $brand)
     {
-        //
+        $brand->delete();
+        return redirect()->route('brands.index')->with('success', 'Brand deleted successfully.');
     }
 }
