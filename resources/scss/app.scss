@@ -15,18 +15,14 @@ main {
 #jumbo {
     background-image: url('../images/image-1.png');
     height: 100px;
-    background-size: cover;
-    /* Ensures the image covers the entire container */
-    background-position: center;
-    /* Centers the image */
+    background-size: cover;  
+    background-position: center;   
     background-repeat: no-repeat;
 }
 #jumbo-b {
     background-image: url('../images/image-2.png');
-height: 600px;
-    background-size: cover;
-    /* Ensures the image covers the entire container */
-    background-position: center;
-    /* Centers the image */
+    height: 600px;
+    background-size: cover;    
+    background-position: center;     
     background-repeat: no-repeat;
 }
