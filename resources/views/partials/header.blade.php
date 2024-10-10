@@ -15,14 +15,28 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('cars.index') }}">Auto</a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Menu
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Azione</a></li>
+                        <li><a class="dropdown-item" href="#">Un'altra azione</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Qualcos'altro qui</a></li>
+                    </ul>
+                </li>
             </ul>
             <form class="d-flex">
-                <input class="form-control me-1" type="search" placeholder="Cerca" aria-label="Cerca">
+                <input class="form-control me-2" type="search" placeholder="Cerca" aria-label="Cerca">
                 <button class="btn btn-outline-light" type="submit">Cerca</button>
             </form>
-            <div class="d-flex align-items-center ms-2">
-                <a href="#" class="btn btn-outline-light">Accedi</a>
-                <img src="https://flagcdn.com/16x12/it.png" alt="Bandiera Italiana" class="ms-2">
+            <div class="d-flex align-items-center ms-3">
+                <a href="#" class="btn btn-outline-light me-3">Accedi</a>
+                <img src="https://flagcdn.com/16x12/it.png" alt="Bandiera Italiana" class="me-2">
             </div>
         </div>
     </div>
