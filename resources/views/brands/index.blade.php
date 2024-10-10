@@ -21,24 +21,22 @@
                                 <th>Telefono</th>
                                 <th>Indirizzo</th>
                                 <th>Colore</th>
-                                <tr>
+                            <tr>
                         </thead>
                         <tbody>
-                            @foreach ($resellers as $reseller)
+                            @foreach ($brands as $brand)
                                 <tr>
-                                    <td>{{ $reseller->id }}</td>
-                                    <td>{{ $reseller->company }}</td>
-                                    <td>{{ $reseller->phone }}</td>
-                                    <td>{{ $reseller->address }}</td>
-                                  
+                                    <td>{{ $brand->id }}</td>
+                                    <td>{{ $brand->company }}</td>
+                                    <td>{{ $brand->phone }}</td>
+                                    <td>{{ $brand->address }}</td>
+
                                     <td>
                                         <div class="d-flex gap-2">
-                                            <a href=" "
-                                                class="btn btn-primary btn-sm">
+                                            <a href=" " class="btn btn-primary btn-sm">
                                                 <i class="fas fa-eye"></i>
                                             </a>
-                                            <a href=" "
-                                                class="btn btn-warning btn-sm">
+                                            <a href=" " class="btn btn-warning btn-sm">
                                                 <i class="fas fa-edit"></i>
                                             </a>
                                             <form action=" " method="POST"
