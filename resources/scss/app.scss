@@ -1,4 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
 @import "@fortawesome/fontawesome-free/css/all.css";
 
+@import 'header';
+@import 'footer';
 @import 'edit_cars';
+
+main {
+    height: calc(100vh - 100px);
+}
