@@ -27,7 +27,7 @@
                                     <th>Porte</th>
                                     <th>KM</th>
                                     <th>Usato</th>
-                                    <th>Azioni</th>
+                                    <th class="text-end pe-5">Azioni</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -43,7 +43,7 @@
                                         <td>{{ $car->doors }}</td>
                                         <td>{{ number_format($car->km, 0, ',', '.') }} km</td>
                                         <td>{{ $car->used ? 'Sì' : 'No' }}</td>
-                                        <td>
+                                        <td class="pe-4">
                                             <div class="d-flex gap-1 justify-content-end">
                                                 <a href="{{ route('cars.show', ['car' => $car->id]) }}"
                                                     class="btn btn-primary btn-sm">
@@ -54,11 +54,10 @@
                                                     <i class="fas fa-edit"></i>
                                                 </a>
                                                 <form action="{{ route('cars.destroy', ['car' => $car->id]) }}"
-                                                    method="POST"
-                                                    onsubmit="return confirm('Sei sicuro di voler eliminare questa auto?');">
+                                                    method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm">
+                                                    <button type="submit" class="btn btn-danger btn-sm delete-car">
                                                         <i class="fas fa-trash"></i>
                                                     </button>
                                                 </form>
@@ -73,4 +72,5 @@
             </div>
         </div>
     </div>
+    @include('cars.partials.modal_delete')
 @endsection
