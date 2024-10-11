@@ -12,6 +12,7 @@ class Brand extends Model
     protected $fillable = [
         'company',
         'address',
-        'phone'
+        'phone',
+        'thumb'
     ];
 }

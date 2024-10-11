@@ -19,6 +19,7 @@ class Car extends Model
         'horsepower',
         'doors',
         'km',
-        'used'
+        'used',
+        'thumb'
     ];    
 }

@@ -25,6 +25,7 @@ return new class extends Migration
             $table->tinyInteger('doors');
             $table->mediumInteger('km');
             $table->boolean('used')->default(false);
+            $table->string('thumb')->nullable();
             $table->timestamps();
         });
     }

@@ -29,7 +29,8 @@ class CarSeeder extends Seeder
             $new_car->doors = $car['doors'];
             $new_car->km = $car['km'];
             $new_car->used = $car['used'];
-
+            $new_car->thumb = $car['thumb'] ?? null;
+            
             $new_car->save();
         }
     }

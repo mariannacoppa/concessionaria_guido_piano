@@ -12,6 +12,7 @@ class Optional extends Model
     protected $fillable = [
         'name',
         'description',
-        'price'
+        'price',
+        'thumb'
     ];    
 }

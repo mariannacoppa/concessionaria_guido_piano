@@ -1,7 +1,7 @@
-.custom-style {
+#index {
+
     .bg-giallo {
         background-color: #FFD700;
-        border-radius: 5px;
     }
 
     .btn-dark {
@@ -54,6 +54,19 @@
     .table {
         th, td {
             vertical-align: middle;
+        }
+
+        th:last-child, 
+        td:last-child {
+            text-align: center;
+        }
+
+        th:last-child {
+            padding-right: 0;
+        }
+
+        td:last-child {
+            padding-right: 0;
         }
 
         .table-dark {

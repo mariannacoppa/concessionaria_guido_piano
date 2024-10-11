@@ -1,28 +1,15 @@
 @import "~bootstrap/scss/bootstrap";
 @import "@fortawesome/fontawesome-free/css/all.css";
 
+@import 'home';
 @import 'header';
 @import 'footer';
+@import 'show';;
+@import 'index';;
 @import 'edit';
-@import 'index';
-@import 'show';
 @import 'create';
 
 main {
     height: calc(100vh - 100px);
     overflow-y: auto;
-}
-#jumbo {
-    background-image: url('../images/image-1.png');
-    height: 100px;
-    background-size: cover;  
-    background-position: center;   
-    background-repeat: no-repeat;
-}
-#jumbo-b {
-    background-image: url('../images/image-2.png');
-    height: 600px;
-    background-size: cover;    
-    background-position: center;     
-    background-repeat: no-repeat;
 }

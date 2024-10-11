@@ -15,9 +15,11 @@ return new class extends Migration
     {
         Schema::create('brands', function (Blueprint $table) {
             $table->id();
-            $table->string('company', 100)->unique();
+            $table->string('company', 100);
+            // ->unique()
             $table->string('phone', 15);
             $table->string('address', 100);
+            $table->string('thumb')->nullable();
             $table->timestamps();
         });        
     }
