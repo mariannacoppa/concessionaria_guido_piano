@@ -2,7 +2,7 @@
 return [
     [
         'company' => 'Ferrari',
-        'address' => 'Via Abettone Inferiore, 4, 41053 Maranello (MO), Italy',
+        'address' => 'Via Abetone Inferiore, 4, 41053 Maranello (MO), Italy',
         'phone' => '+390536949111',
         'thumb' => 'https://motori.leggo.it/photos/HIGH/32/27/7363227_24194659_graypaulferrariglasgowphotomaxearey095_1.jpg'
     ],
