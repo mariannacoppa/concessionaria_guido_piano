@@ -3,7 +3,7 @@
 @section('content')
     <div id="edit" class="edit-container">
         <div class="edit-header">
-            <h1 class="text-uppercase">Modifica Auto: {{ $car->brand }} {{ $car->model }}</h1>
+            <h1 class="text-uppercase">Modifica Auto: {{ $car->brand->name }} {{ $car->model }}</h1>
         </div>
         <div class="edit-body">
             <form action="{{ route('cars.update', $car->id) }}" method="POST">
@@ -12,10 +12,18 @@
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="brand">Marca:</label>
-                        <input type="text" id="brand" name="brand" value="{{ old('brand', $car->brand) }}"
-                            class="form-control @error('brand') is-invalid @enderror" required>
-                        @error('brand')
+                        <label for="brand_id">Marca:</label>
+                        <select id="brand_id" name="brand_id" class="form-control @error('brand_id') is-invalid @enderror"
+                            required>
+                            <option value="">Seleziona una marca</option>
+                            @foreach ($brands as $brand)
+                                <option value="{{ $brand->id }}"
+                                    {{ old('brand_id', $car->brand_id) == $brand->id ? 'selected' : '' }}>
+                                    {{ $brand->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                        @error('brand_id')
                             <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
                     </div>

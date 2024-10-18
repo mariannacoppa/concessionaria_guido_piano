@@ -24,7 +24,7 @@ class UpdateCarRequest extends FormRequest
     public function rules()
     {
         return [
-            'brand' => 'required|string|max:30',
+            'brand_id' => 'required|exists:brands,id',
             'model' => 'required|string|max:30',
             'year' => 'required|integer|min:1900|max:' . date('Y'),
             'color' => 'required|string|max:15',
@@ -34,6 +34,7 @@ class UpdateCarRequest extends FormRequest
             'doors' => 'required|integer|min:2|max:5',
             'km' => 'required|integer|min:0',
             'used' => 'required|boolean',
+            'thumb' => 'nullable|url',
         ];
     }
 
@@ -45,47 +46,48 @@ class UpdateCarRequest extends FormRequest
     public function messages()
     {
         return [
-            'brand.required' => 'Il campo "marca" è obbligatorio.',
-            'brand.string' => 'Il campo "marca" deve essere una stringa.',
-            'brand.max' => 'Il campo "marca" non può superare i 30 caratteri.',
-            
-            'model.required' => 'Il campo "modello" è obbligatorio.',
-            'model.string' => 'Il campo "modello" deve essere una stringa.',
-            'model.max' => 'Il campo "modello" non può superare i 30 caratteri.',
-            
-            'year.required' => 'Il campo "anno" è obbligatorio.',
-            'year.integer' => 'Il campo "anno" deve essere un numero intero.',
-            'year.min' => 'Il campo "anno" non può essere inferiore a 1900.',
-            'year.max' => 'Il campo "anno" non può essere superiore all\'anno corrente.',
+            'brand_id.required' => 'Il campo "Marca" è obbligatorio.',
+            'brand_id.exists' => 'Il brand selezionato non esiste.',
 
-            'color.required' => 'Il campo "colore" è obbligatorio.',
-            'color.string' => 'Il campo "colore" deve essere una stringa.',
-            'color.max' => 'Il campo "colore" non può superare i 15 caratteri.',
+            'model.required' => 'Il campo "Modello" è obbligatorio.',
+            'model.string' => 'Il campo "Modello" deve essere una stringa.',
+            'model.max' => 'Il campo "Modello" non può superare i 30 caratteri.',
 
-            'price.required' => 'Il campo "prezzo" è obbligatorio.',
-            'price.numeric' => 'Il campo "prezzo" deve essere un numero.',
-            'price.min' => 'Il campo "prezzo" deve essere positivo.',
+            'year.required' => 'Il campo "Anno" è obbligatorio.',
+            'year.integer' => 'Il campo "Anno" deve essere un numero intero.',
+            'year.min' => 'Il campo "Anno" non può essere inferiore a 1900.',
+            'year.max' => 'Il campo "Anno" non può essere superiore all\'anno corrente.',
 
-            'engine.required' => 'Il campo "motore" è obbligatorio.',
-            'engine.string' => 'Il campo "motore" deve essere una stringa.',
-            'engine.max' => 'Il campo "motore" non può superare i 30 caratteri.',
+            'color.required' => 'Il campo "Colore" è obbligatorio.',
+            'color.string' => 'Il campo "Colore" deve essere una stringa.',
+            'color.max' => 'Il campo "Colore" non può superare i 15 caratteri.',
 
-            'horsepower.required' => 'Il campo "cavalli" è obbligatorio.',
-            'horsepower.integer' => 'Il campo "cavalli" deve essere un numero intero.',
-            'horsepower.min' => 'Il campo "cavalli" deve essere almeno 0.',
-            'horsepower.max' => 'Il campo "cavalli" non può superare 9999.',
+            'price.required' => 'Il campo "Prezzo" è obbligatorio.',
+            'price.numeric' => 'Il campo "Prezzo" deve essere un numero.',
+            'price.min' => 'Il campo "Prezzo" deve essere positivo.',
 
-            'doors.required' => 'Il campo "porte" è obbligatorio.',
-            'doors.integer' => 'Il campo "porte" deve essere un numero intero.',
-            'doors.min' => 'Il numero minimo di "porte" è 2.',
-            'doors.max' => 'Il numero massimo di "porte" è 5.',
+            'engine.required' => 'Il campo "Motore" è obbligatorio.',
+            'engine.string' => 'Il campo "Motore" deve essere una stringa.',
+            'engine.max' => 'Il campo "Motore" non può superare i 30 caratteri.',
 
-            'km.required' => 'Il campo "chilometraggio" è obbligatorio.',
-            'km.integer' => 'Il campo "chilometraggio" deve essere un numero intero.',
-            'km.min' => 'Il campo "chilometraggio" deve essere almeno 0.',
+            'horsepower.required' => 'Il campo "Cavalli" è obbligatorio.',
+            'horsepower.integer' => 'Il campo "Cavalli" deve essere un numero intero.',
+            'horsepower.min' => 'Il campo "Cavalli" deve essere almeno 0.',
+            'horsepower.max' => 'Il campo "Cavalli" non può superare 9999.',
 
-            'used.required' => 'Il campo "usata" è obbligatorio.',
-            'used.boolean' => 'Il campo "usata" deve essere vero o falso.',
+            'doors.required' => 'Il campo "Porte" è obbligatorio.',
+            'doors.integer' => 'Il campo "Porte" deve essere un numero intero.',
+            'doors.min' => 'Il numero minimo di "Porte" è 2.',
+            'doors.max' => 'Il numero massimo di "Porte" è 5.',
+
+            'km.required' => 'Il campo "Chilometri" è obbligatorio.',
+            'km.integer' => 'Il campo "Chilometri" deve essere un numero intero.',
+            'km.min' => 'Il campo "Chilometri" deve essere almeno 0.',
+
+            'used.required' => 'Il campo "Usato" è obbligatorio.',
+            'used.boolean' => 'Il campo "Usato" deve essere vero (Sì) o falso (No).',
+
+            'thumb.url' => 'Il campo "Thumb" deve essere un URL valido.',
         ];
     }
 }

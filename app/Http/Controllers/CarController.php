@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\Brand;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
@@ -27,7 +28,8 @@ class CarController extends Controller
      */
     public function create()
     {
-        return view('cars.create');
+        $brands = Brand::all();
+        return view('cars.create', compact('brands'));
     }
 
     /**
@@ -61,7 +63,8 @@ class CarController extends Controller
      */
     public function edit(Car $car)
     {
-        return view('cars.edit', compact('car'));
+        $brands = Brand::all();
+        return view('cars.edit', compact('car', 'brands'));
     }
 
     /**

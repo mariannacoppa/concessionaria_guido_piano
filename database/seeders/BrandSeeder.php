@@ -19,8 +19,8 @@ class BrandSeeder extends Seeder
         foreach ($brands as $brand) {
             $new_brand = new Brand();
             
+            $new_brand->name = $brand['name'];
             $new_brand->phone = $brand['phone'];
-            $new_brand->company = $brand['company'];
             $new_brand->address = $brand['address'];
             $new_brand->thumb = $brand['thumb'] ?? null;
             

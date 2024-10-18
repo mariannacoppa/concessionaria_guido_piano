@@ -4,7 +4,7 @@
     <div id="show">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h1 class="m-2 display-4 text-primary">{{ $brand->company }}</h1>
+                <h1 class="m-2 display-4 text-primary">{{ $brand->name }}</h1>
                 <div class="form-actions mt-4 text-right pr-3 pl-3">
                     <a href="{{ route('brands.index') }}" class="btn btn-secondary">
                         <i class="fas fa-arrow-left"></i> Torna alla lista
@@ -23,7 +23,7 @@
                         <p class="mb-3">
                             <i class="fas fa-building text-primary"></i>
                             <strong>Azienda:</strong>
-                            <span class="text-muted mx-1">{{ $brand->company }}</span>
+                            <span class="text-muted mx-1">{{ $brand->name }}</span>
                         </p>
                         <p class="mb-3">
                             <i class="fas fa-phone text-success"></i>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="col-md-8 d-flex justify-content-end align-items-center">
                     <img src="{{ $brand->thumb ?? 'https://placehold.co/600x400?text=Immagine+Mancante' }}"
-                        alt="{{ $brand->company }}" class="img-fluid rounded shadow-sm">
+                        alt="{{ $brand->name }}" class="img-fluid rounded shadow-sm">
                 </div>
             </div>
         </div>

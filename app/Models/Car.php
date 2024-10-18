@@ -10,7 +10,7 @@ class Car extends Model
     use HasFactory;
 
     protected $fillable = [
-        'brand',
+        'brand_id',
         'model',
         'year',
         'color',
@@ -21,5 +21,10 @@ class Car extends Model
         'km',
         'used',
         'thumb'
-    ];    
+    ];
+    
+    public function brand()
+    {
+        return $this->belongsTo(Brand::class);
+    }
 }

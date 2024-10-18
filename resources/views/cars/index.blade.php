@@ -34,7 +34,7 @@
                                 @foreach ($cars as $car)
                                     <tr>
                                         <td>{{ $car->id }}</td>
-                                        <td>{{ $car->brand }}</td>
+                                        <td>{{ $car->brand ? $car->brand->name : 'N/D' }}</td>
                                         <td>{{ $car->model }}</td>
                                         <td>{{ $car->year }}</td>
                                         <td>{{ $car->color }}</td>
@@ -54,7 +54,7 @@
                                                     <i class="fas fa-edit"></i>
                                                 </a>
                                                 <form action="{{ route('cars.destroy', ['car' => $car->id]) }}"
-                                                    method="POST">
+                                                    method="POST" class="mb-0">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm delete-car">

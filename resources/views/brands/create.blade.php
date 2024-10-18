@@ -6,15 +6,15 @@
             <h1 class="text-uppercase">Aggiungi un nuovo Brand</h1>
         </div>
         <div class="create-body">
-            <form action="{{ route('brands.store') }}" method="POST">
+            <form action="{{ route('brands.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="company">Nome Azienda:</label>
-                        <input type="text" id="company" name="company" value="{{ old('company') }}"
-                            class="form-control @error('company') is-invalid @enderror" required>
-                        @error('company')
+                        <label for="name">Nome Azienda:</label>
+                        <input type="text" id="name" name="name" value="{{ old('name') }}"
+                            class="form-control @error('name') is-invalid @enderror" required>
+                        @error('name')
                             <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
                     </div>
@@ -35,6 +35,17 @@
                         <input type="text" id="address" name="address" value="{{ old('address') }}"
                             class="form-control @error('address') is-invalid @enderror" required>
                         @error('address')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="thumb">Logo Azienda (Opzionale):</label>
+                        <input type="file" id="thumb" name="thumb"
+                            class="form-control @error('thumb') is-invalid @enderror">
+                        @error('thumb')
                             <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
                     </div>

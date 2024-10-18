@@ -4,7 +4,7 @@
     <div id="show">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h1 class="m-2 display-4 text-primary">{{ $car->brand }} {{ $car->model }} {{ $car->trim }}</h1>
+                <h1 class="m-2 display-4 text-primary">{{ $car->brand->name }} {{ $car->model }}</h1>
                 <div class="form-actions mt-4 text-right pr-3 pl-3">
                     <a href="{{ route('cars.index') }}" class="btn btn-secondary">
                         <i class="fas fa-arrow-left"></i> Torna alla lista
@@ -20,8 +20,9 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="car-details p-3 bg-light rounded shadow-sm">
-                        <p><strong>Marca:</strong> <span class="text-muted">{{ $car->brand }}</span></p>
+                        <p><strong>Marca:</strong> <span class="text-muted">{{ $car->brand->name }}</span></p>
                         <p><strong>Modello:</strong> <span class="text-muted">{{ $car->model }}</span></p>
+                        <p><strong>Allestimento:</strong> <span class="text-muted">{{ $car->trim }}</span></p>
                         <p><strong>Anno:</strong> <span class="text-muted">{{ $car->year }}</span></p>
                         <p><strong>Colore:</strong> <span class="text-muted">{{ $car->color }}</span></p>
                         <p><strong>Chilometri:</strong> <span class="text-muted">{{ number_format($car->km, 0, ',', '.') }}

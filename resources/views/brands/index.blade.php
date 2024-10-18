@@ -28,7 +28,7 @@
                                 @foreach ($brands as $brand)
                                     <tr>
                                         <td>{{ $brand->id }}</td>
-                                        <td>{{ $brand->company }}</td>
+                                        <td>{{ $brand->name }}</td>
                                         <td>{{ $brand->phone }}</td>
                                         <td>{{ $brand->address }}</td>
                                         <td>

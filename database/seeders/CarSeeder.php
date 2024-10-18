@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Car;
+use App\Models\Brand;
 
 class CarSeeder extends Seeder
 {
@@ -19,7 +20,12 @@ class CarSeeder extends Seeder
         foreach ($cars as $car) {
             $new_car = new Car();
 
-            $new_car->brand = $car['brand'];
+            $brand = Brand::where('name', $car['brand'])->first();
+
+            if ($brand) {
+                $new_car->brand_id = $brand->id;
+            }
+
             $new_car->model = $car['model'];
             $new_car->year = $car['year'];
             $new_car->color = $car['color'];

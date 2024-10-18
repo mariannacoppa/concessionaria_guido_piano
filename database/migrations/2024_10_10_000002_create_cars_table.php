@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
-            $table->string('brand', 30);
+            $table->unsignedBigInteger('brand_id');
             $table->string('model', 30);
             $table->year('year');
             $table->string('color', 15);
-            $table->decimal('price', 10,2);
+            $table->decimal('price', 10, 2);
             $table->string('engine', 30);
             $table->smallInteger('horsepower');
             $table->tinyInteger('doors');
@@ -27,6 +27,8 @@ return new class extends Migration
             $table->boolean('used')->default(false);
             $table->string('thumb')->nullable();
             $table->timestamps();
+
+            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
         });
     }
 
