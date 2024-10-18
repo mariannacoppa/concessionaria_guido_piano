@@ -13,6 +13,7 @@ return [
         'km' => 10000,
         'used' => false,
         'thumb' => 'https://www.ultimatecarpage.com/images/car/5744/Lamborghini-Huracan-LP610-4-36859.jpg',
+        'optionals' => ['Navigatore Satellitare', 'Interni in Pelle'],
     ],
     [
         'brand' => 'Lamborghini',
@@ -26,6 +27,7 @@ return [
         'km' => 5000,
         'used' => false,
         'thumb' => 'https://cdn.ferrari.com/cms/network/media/img/resize/5ea6cea901a4636006b49711-16_ferrari-410_superamerica_488_gtb_esterni?width=750&height=550',
+        'optionals' => ['Tetto Panoramico', 'Impianto Audio Premium', 'Cerchi in Lega da 20 pollici'],
     ],
     [
         'brand' => 'Porsche',
@@ -39,6 +41,7 @@ return [
         'km' => 2000,
         'used' => false,
         'thumb' => 'https://cdn.motor1.com/images/mgl/nr6Jx/s3/porsche-911-carrera-992-2019.webp',
+        'optionals' => ['Fari Full LED', 'Climatizzatore Bizona', 'Head-Up Display'],
     ],
     [
         'brand' => 'Tesla',
@@ -52,6 +55,7 @@ return [
         'km' => 1000,
         'used' => false,
         'thumb' => 'https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_default/v1/editorial/2018-bmw-m5-competition-sedan-silver-1001x565-(2).jpg',
+        'optionals' => ['Telecamera a 360 gradi', 'Pacchetto Assistenza alla Guida', 'Adaptive Cruise Control'],
     ],
     [
         'brand' => 'BMW',
@@ -65,6 +69,7 @@ return [
         'km' => 8000,
         'used' => false,
         'thumb' => 'https://media.ed.edmunds-media.com/tesla/model-s/2019/oem/2019_tesla_model-s_sedan_performance_fq_oem_1_1600.jpg',
+        'optionals' => ['Sospensioni Attive', 'Sistema di Ricarica Wireless per Smartphone'],
     ],
     [
         'brand' => 'Audi',
@@ -78,6 +83,7 @@ return [
         'km' => 15000,
         'used' => true,
         'thumb' => 'https://car-images.bauersecure.com/wp-images/12403/audi_rs6_perf_01.jpg',
+        'optionals' => ['Sensori di Parcheggio', 'Cerchi in Lega da 20 pollici'],
     ],
     [
         'brand' => 'Mercedes-Benz',
@@ -91,6 +97,7 @@ return [
         'km' => 12000,
         'used' => true,
         'thumb' => 'https://www.motortrend.com/uploads/sites/5/2015/07/2016-Mercedes-AMG-GT-S-front-three-quarter-in-motion.jpg',
+        'optionals' => ['Freni in Carboceramica', 'Sedili Sportivi'],
     ],
     [
         'brand' => 'Jaguar',
@@ -104,6 +111,7 @@ return [
         'km' => 6000,
         'used' => false,
         'thumb' => 'https://assets.carandclassic.com/uploads/cars/jaguar/C1696614/2019-jaguar-f-type-r-65e60414c6394.jpg?ar=16%3A9&auto=&fit=crop&h=1200&ixlib=php-4.1.0&q=75&w=1200&s=351ca6f40ae27ac067d6a992d4f6f8ad',
+        'optionals' => ['Cerchi in Lega da 20 pollici', 'Impianto Audio Premium'],
     ],
     [
         'brand' => 'Aston Martin',
@@ -117,6 +125,7 @@ return [
         'km' => 3000,
         'used' => false,
         'thumb' => 'https://images.pistonheads.com/nimg/44321/Vantage_26.jpg',
+        'optionals' => ['Head-Up Display', 'Telecamera a 360 gradi'],
     ],
     [
         'brand' => 'Maserati',
@@ -130,6 +139,7 @@ return [
         'km' => 20000,
         'used' => true,
         'thumb' => 'https://www.clubalfa.it/wp-content/uploads/2017/03/La-nuova-Maserati-Quattroporte-2017-1-1200x900.jpg',
+        'optionals' => ['Climatizzatore Bizona', 'Sistema di Intrattenimento Posteriore'],
     ],
     [
         'brand' => 'Bentley',
@@ -143,6 +153,7 @@ return [
         'km' => 5000,
         'used' => false,
         'thumb' => 'https://www.cnet.com/a/img/resize/a4aae98163097b0714f5451173917a0c367abf61/hub/2020/01/20/3a5c8d5b-80a0-4fea-84b2-537bac93d89c/ogi1-2020-bentley-continental-gt-coupe-001.jpg?auto=webp&fit=crop&height=675&width=1200',
+        'optionals' => ['Navigatore Satellitare', 'Interni in Pelle'],
     ],
     [
         'brand' => 'McLaren',
@@ -156,6 +167,7 @@ return [
         'km' => 2000,
         'used' => false,
         'thumb' => 'https://www.m3motorcube.com/wp/wp-content/uploads/2021/03/Medium-13045-McLaren720SGT3X-1024x686.jpg',
+        'optionals' => ['Freni in Carboceramica', 'Cerchi in Lega da 20 pollici', 'Sedili Sportivi'],
     ],
     [
         'brand' => 'Ford',
@@ -169,6 +181,7 @@ return [
         'km' => 10000,
         'used' => true,
         'thumb' => 'https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/da6e8a1d4896127a9d2adf83461993b45339474c/photos/98mM0op6-zE2Cv35KDJp.ljDej9Zlz.jpeg?t=163760935638',
+        'optionals' => ['Sensori di Parcheggio', 'Tetto Panoramico'],
     ],
     [
         'brand' => 'Chevrolet',
@@ -182,6 +195,7 @@ return [
         'km' => 8000,
         'used' => true,
         'thumb' => 'https://www.cnet.com/a/img/resize/cf0febeeb1ad0dad96b51c00bf0ea81d07de654d/hub/2017/11/29/16ceac81-c8e6-42e9-8d2a-7ec18ae5e9a3/2018-chevrolet-camaro-ss-1.jpg?auto=webp&fit=crop&height=675&width=1200',
+        'optionals' => ['Cerchi in Lega da 20 pollici', 'Sedili Riscaldati e Ventilati'],
     ],
     [
         'brand' => 'Rolls-Royce',
@@ -195,6 +209,7 @@ return [
         'km' => 1000,
         'used' => false,
         'thumb' => 'https://hips.hearstapps.com/hmg-prod/images/2020-rolls-royce-ghost-mmp-1-1585172707.jpg?crop=0.987xw:0.658xh;0,0.250xh&resize=1200:*',
+        'optionals' => ['Navigatore Satellitare', 'Head-Up Display', 'Specchietti Retrovisori Antiabbagliamento'],
     ],
     [
         'brand' => 'Bugatti',
@@ -208,6 +223,7 @@ return [
         'km' => 500,
         'used' => false,
         'thumb' => 'https://cdn.motor1.com/images/mgl/QE3q0/s1/2021-bugatti-chiron-super-sport-300.jpg',
+        'optionals' => ['Freni in Carboceramica', 'Interni in Pelle', 'Sistema di Ricarica Wireless per Smartphone'],
     ],
     [
         'brand' => 'Ferrari',
@@ -221,6 +237,7 @@ return [
         'km' => 1000,
         'used' => false,
         'thumb' => 'https://assets.dyler.com/uploads/cars/223067/4874582/medium_962ec94e-a1e2-4706-9d50-52f7c7ce27c0.jpg',
+        'optionals' => ['Interni in Pelle', 'Sospensioni Attive', 'Sistema di Ricarica Wireless per Smartphone'],
     ],
     [
         'brand' => 'Lamborghini',
@@ -234,5 +251,6 @@ return [
         'km' => 3000,
         'used' => false,
         'thumb' => 'https://www.bentleylongisland.com/imagetag/2806/main/l/New-2020-Lamborghini-Aventador-SVJ-Roadster-1597949125.jpg',
+        'optionals' => ['Freni in Carboceramica', 'Cerchi in Lega da 20 pollici', 'Sedili Sportivi'],
     ],
 ];

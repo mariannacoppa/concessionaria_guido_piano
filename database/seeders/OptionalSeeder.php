@@ -14,18 +14,15 @@ class OptionalSeeder extends Seeder
      */
     public function run()
     {
-        $optionals = config("optionals");
+        $optionals = config('optionals');
 
         foreach ($optionals as $optional) {
-
-            $new_optional = new Optional();
-            
-            $new_optional->name = $optional['name'];
-            $new_optional->description = $optional['description'];
-            $new_optional->price = $optional['price'];
-            $new_optional->thumb = $optional['thumb'] ?? null;
-            
-            $new_optional->save();
+            Optional::create([
+                'name' => $optional['name'],
+                'description' => $optional['description'],
+                'price' => $optional['price'],
+                'thumb' => $optional['thumb'] ?? null,
+            ]);
         }
     }
 }

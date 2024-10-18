@@ -16,7 +16,7 @@ class OptionalController extends Controller
      */
     public function index()
     {
-        $optionals = Optional::all();
+        $optionals = Optional::with('cars')->get();
         return view('optionals.index', compact('optionals'));
     }
 
@@ -50,6 +50,7 @@ class OptionalController extends Controller
      */
     public function show(Optional $optional)
     {
+        $optional->load('cars');
         return view('optionals.show', compact('optional'));
     }
 
@@ -85,7 +86,9 @@ class OptionalController extends Controller
      */
     public function destroy(Optional $optional)
     {
+        $optional->cars()->detach();
         $optional->delete();
+        
         return redirect()->route('optionals.index')->with('success', 'Optional deleted successfully.');
     }
 }

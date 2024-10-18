@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Car;
 use App\Models\Brand;
+use App\Models\Optional;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
@@ -17,7 +18,7 @@ class CarController extends Controller
      */
     public function index()
     {
-        $cars = Car::all();
+        $cars = Car::with('optionals')->get();
         return view('cars.index', compact('cars'));
     }
 
@@ -29,7 +30,8 @@ class CarController extends Controller
     public function create()
     {
         $brands = Brand::all();
-        return view('cars.create', compact('brands'));
+        $optionals = Optional::all();
+        return view('cars.create', compact('brands', 'optionals'));
     }
 
     /**
@@ -40,7 +42,12 @@ class CarController extends Controller
      */
     public function store(StoreCarRequest $request)
     {
-        Car::create($request->validated());
+        $car = Car::create($request->validated());
+
+        if ($request->has('optionals')) {
+            $car->optionals()->sync($request->optionals);
+        }
+
         return redirect()->route('cars.index')->with('success', 'Car created successfully.');
     }
 
@@ -52,6 +59,7 @@ class CarController extends Controller
      */
     public function show(Car $car)
     {
+        $car->load('optionals');
         return view('cars.show', compact('car'));
     }
 
@@ -64,7 +72,9 @@ class CarController extends Controller
     public function edit(Car $car)
     {
         $brands = Brand::all();
-        return view('cars.edit', compact('car', 'brands'));
+        $optionals = Optional::all();
+        $car->load('optionals');
+        return view('cars.edit', compact('car', 'brands', 'optionals'));
     }
 
     /**
@@ -77,6 +87,13 @@ class CarController extends Controller
     public function update(UpdateCarRequest $request, Car $car)
     {
         $car->update($request->validated());
+
+        if ($request->has('optionals')) {
+            $car->optionals()->sync($request->optionals);
+        } else {
+            $car->optionals()->detach();
+        }
+
         return redirect()->route('cars.index')->with('success', 'Car updated successfully.');
     }
 
@@ -88,7 +105,9 @@ class CarController extends Controller
      */
     public function destroy(Car $car)
     {
+        $car->optionals()->detach();
         $car->delete();
+
         return redirect()->route('cars.index')->with('success', 'Car deleted successfully.');
     }
 }

@@ -27,4 +27,9 @@ class Car extends Model
     {
         return $this->belongsTo(Brand::class);
     }
+
+    public function optionals()
+    {
+        return $this->belongsToMany(Optional::class);
+    }
 }

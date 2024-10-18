@@ -14,5 +14,10 @@ class Optional extends Model
         'description',
         'price',
         'thumb'
-    ];    
+    ]; 
+
+    public function cars()
+    {
+        return $this->belongsToMany(Car::class);
+    }
 }

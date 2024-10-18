@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Car;
 use App\Models\Brand;
+use App\Models\Optional;
 
 class CarSeeder extends Seeder
 {
@@ -15,13 +16,12 @@ class CarSeeder extends Seeder
      */
     public function run()
     {
-        $cars = config("cars");
+        $cars = config('cars');
 
         foreach ($cars as $car) {
             $new_car = new Car();
 
             $brand = Brand::where('name', $car['brand'])->first();
-
             if ($brand) {
                 $new_car->brand_id = $brand->id;
             }
@@ -38,6 +38,12 @@ class CarSeeder extends Seeder
             $new_car->thumb = $car['thumb'] ?? null;
             
             $new_car->save();
+
+            if (isset($car['optionals'])) {
+                $optional_ids = Optional::whereIn('name', $car['optionals'])->pluck('id');
+                
+                $new_car->optionals()->attach($optional_ids);
+            }
         }
     }
 }

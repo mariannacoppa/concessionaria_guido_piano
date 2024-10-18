@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="edit" class="edit-container">
-        <div class="edit-header">
+        <div class="edit-header mb-4">
             <h1 class="text-uppercase">Modifica Auto: {{ $car->brand->name }} {{ $car->model }}</h1>
         </div>
         <div class="edit-body">
@@ -119,6 +119,31 @@
                         @error('used')
                             <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="optionals">Optional:</label>
+                        <div class="card p-3 bg-light">
+                            <div class="row">
+                                @foreach ($optionals as $optional)
+                                    <div class="col-md-4 my-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="optionals[]"
+                                                value="{{ $optional->id }}" id="optional-{{ $optional->id }}"
+                                                {{ $car->optionals->contains($optional->id) ? 'checked' : '' }}>
+                                            <label class="form-check-label" for="optional-{{ $optional->id }}">
+                                                <strong>{{ $optional->name }}</strong> <br>
+                                                <small>{{ $optional->description }}</small> <br>
+                                                <span
+                                                    class="text-muted">€{{ number_format($optional->price, 2, ',', '.') }}</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
                     </div>
                 </div>
 

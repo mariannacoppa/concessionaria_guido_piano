@@ -22,9 +22,9 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
+            OptionalSeeder::class,
             BrandSeeder::class,
             CarSeeder::class,
-            OptionalSeeder::class,
         ]);
     }
 }

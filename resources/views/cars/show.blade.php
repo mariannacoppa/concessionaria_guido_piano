@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="show">
-        <div class="container">
+        <div class="container-fluid"> {{-- Allarga il contenitore --}}
             <div class="d-flex justify-content-between align-items-center">
                 <h1 class="m-2 display-4 text-primary">{{ $car->brand->name }} {{ $car->model }}</h1>
                 <div class="form-actions mt-4 text-right pr-3 pl-3">
@@ -18,7 +18,8 @@
             <hr>
 
             <div class="row">
-                <div class="col-md-4">
+                {{-- Colonna per i dettagli della macchina (più stretta) --}}
+                <div class="col-md-3">
                     <div class="car-details p-3 bg-light rounded shadow-sm">
                         <p><strong>Marca:</strong> <span class="text-muted">{{ $car->brand->name }}</span></p>
                         <p><strong>Modello:</strong> <span class="text-muted">{{ $car->model }}</span></p>
@@ -39,9 +40,33 @@
                         <p><strong>Posti:</strong> <span class="text-muted">{{ $car->seats }}</span></p>
                     </div>
                 </div>
-                <div class="col-md-8 d-flex justify-content-end align-items-center">
+
+                {{-- Colonna per l'immagine della macchina (più larga) --}}
+                <div class="col-md-6 d-flex justify-content-center align-items-center">
                     <img src="{{ $car->thumb ?? 'https://placehold.co/600x400?text=Immagine+Mancante' }}"
                         alt="{{ $car->model }}" class="img-fluid rounded shadow-sm">
+                </div>
+
+                {{-- Colonna per gli optional (più stretta) --}}
+                <div class="col-md-3">
+                    <div class="optional-details p-3 bg-light rounded shadow-sm">
+                        <h5 class="text-primary">Optional</h5>
+                        @if ($car->optionals->isEmpty())
+                            <p class="text-muted">Nessun optional disponibile per questa auto.</p>
+                        @else
+                            <ul class="list-unstyled">
+                                @foreach ($car->optionals as $optional)
+                                    <li>
+                                        <strong>{{ $optional->name }}</strong> - {{ $optional->description }}
+                                        <br>
+                                        <span class="text-muted">Prezzo: €
+                                            {{ number_format($optional->price, 2, ',', '.') }}</span>
+                                    </li>
+                                    <hr>
+                                @endforeach
+                            </ul>
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
